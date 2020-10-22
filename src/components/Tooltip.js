@@ -1,30 +1,32 @@
 import React, { useState } from "react";
 import "../style/Tooltip.css";
 
-const Tooltip = (props) => {
+const TooltipBar = (props) => {
     let timeout;
+    //hooks
     const [active, setActive] = useState(false);
 
-    const showTip = () => {
+    const show = () => {
         timeout = setTimeout(() => {
             setActive(true);
         }, props.delay || 400);
     };
 
-    const hideTip = () => {
+    const hide = () => {
         clearInterval(timeout);
         setActive(false);
     };
+
     return (
         <div
-            className="Tooltip"
-            onMouseEnter={showTip}
-            onMouseLeave={hideTip}
+            className="TooltipWrapper"
+            //onMouse events
+            onMouseEnter={show}
+            onMouseLeave={hide}
         >
-            {}
             {props.children}
             {active && (
-                <div className={`Tooltip-Tip ${props.direction || "top"}`}>
+                <div className={`Tooltip ${props.direction}`}>
                     {props.content}
                 </div>
             )}
@@ -32,4 +34,4 @@ const Tooltip = (props) => {
     );
 };
 
-export default Tooltip;
+export default TooltipBar;

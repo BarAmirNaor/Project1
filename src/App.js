@@ -9,13 +9,12 @@ export default function App() {
         <div >
             <h1>Hi Genadi </h1>
             <div className="app">
-
                 <Tooltip content="Hi!!!!!" direction="right">
-                    Hover me i'm text
+                    Hover me i'm a text
                 </Tooltip>
             </div>
             <div className="app">
-                <Tooltip content="Hello" direction="buttom">
+                <Tooltip content="Hello again :)" direction="buttom">
 <ChildCareIcon/>
                 </Tooltip>
             </div>
